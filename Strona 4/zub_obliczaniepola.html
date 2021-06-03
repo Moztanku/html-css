@@ -1,0 +1,65 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Zadanie</title>
+	<style>
+	.trapez{
+	background-color: #3cc944;
+	width: 300px;
+	height: 270px;
+	margin: auto;
+	}
+    </style>
+    <script>
+        var wynikC;
+        var wynikI;
+        function obliczCM(){
+            var A = parseFloat(document.getElementById('A').value);
+            var B = parseFloat(document.getElementById('B').value);
+            var H = parseFloat(document.getElementById('H').value);
+            wynikC = (A+B)*H/2;
+            wynikI = wynikC / 2.54;
+            document.getElementById("cm").value = wynikC;
+            document.getElementById("cal").value = wynikI;
+        }
+        function obliczIN(){
+            var A = parseFloat(document.getElementById('A').value);
+            var B = parseFloat(document.getElementById('B').value);
+            var H = parseFloat(document.getElementById('H').value);
+            wynikI = (A+B)*H/2;
+            wynikC = wynikI * 2.54;
+            document.getElementById("cm").value = wynikC;
+            document.getElementById("cal").value = wynikI;
+        }
+    </script>
+</head>
+ <body>
+<div class="trapez">
+<form>
+	<fieldset>
+	<legend>Obliczanie pola trapezu</legend>
+    <input type = "text" id = "A" placeholder = "A">
+    <input type = "text" id = "B" placeholder = "B">
+    <input type = "text" id = "H" placeholder = "H">
+    <br>
+    <input type="button" id="button1" value="Oblicz CM">
+    <input type="button" id="button2" value="Oblicz IN">
+	<input type = "reset">
+</form>
+<form>
+	<h6>WYNIK</h6>
+    <input type = "text" id = "cm" placeholder = "Centymetry"> Cm^2
+    <input type = "text" id = "cal" placeholder = "Cale"> In^2
+	<br>
+	<input type = "reset">
+</form>
+<br>
+</div>
+ </fieldset>
+ <script>
+    document.getElementById('button1').addEventListener("click",obliczCM);
+    document.getElementById('button2').addEventListener("click",obliczIN);
+</script>
+ </body>
+</html>

@@ -1,0 +1,47 @@
+body{
+	width: 100vw;
+	height: 100vh;
+	background-image: radial-gradient(#b5a 30%, #ddf 115%, #9ac 60%);
+	}
+	
+:root{
+	--number: 5vh;
+}
+
+body > div {
+	position: relative;
+	top: 0vh;
+	margin: auto;
+	padding: var(--number);
+	width: 60vw;
+	height: 55vh;
+	background-image: linear-gradient(to left,#c3a 10%,#e6a 70%);
+	border: solid pink 5pt;
+	border-radius: 30vw;
+	color: #700;
+	transition: top 10s;
+	z-index: 3;
+			}
+		div > text{
+		top: 10vh;
+		display: block;
+		margin: auto;
+		text-align: center;
+		font-size: 30pt;
+		font-family: Courier New;
+		position: relative;
+					}
+body > div:hover{
+	transform: rotate(20deg);
+	top: 100vh;
+}
+
+div.box{
+	margin: 2vh 5vw 2vw 2vh;
+	width: 20vw;
+	height: 20vh;
+	background-color: #000;
+	z-index: 3;
+	float:right;
+	transition: top 5s;
+}

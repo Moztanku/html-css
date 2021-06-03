@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<title>Obiekty BOM - zadanie</title>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            function submit1(){
+                document.getElementById('output1').innerHTML = document.getElementById('input1').value;
+            }
+            function submit2(){
+                document.getElementById('output2').value = document.getElementById('input2').value;
+            }
+            function submit3(){
+                document.getElementById('site').style.backgroundColor = document.getElementById('input3').value;
+            }
+            function submit4(){
+                document.getElementById('output2').style.fontSize = document.getElementById('input4').value;
+                document.getElementById('output3').style.fontSize = document.getElementById('input4').value;
+            }
+            function submit5(){
+                document.getElementById('output5').value = document.getElementById('output2').value; 
+            }
+            function submit6(){
+                document.getElementById('output6').value = document.lastModified;
+            }
+            function submit7(){
+                document.getElementById('output7').value = document.charset;
+            }
+        </script>
+        <style id="style">
+            body > div{
+                width: 960px;
+                min-height: 720px;
+                background-color:lightgoldenrodyellow;
+                margin: auto;
+                padding-top: 5px;
+                padding-bottom: 20px;
+            }
+            .form{
+                float: left;
+                width: 480px;
+                min-height: 720px;
+                background-color: lightgoldenrodyellow;
+            }
+            .site{
+                float: right;
+                width: 480px;
+                min-height: 720px;
+                background-color: lightgoldenrodyellow;
+            }
+            div div{
+                width: 460px;
+                height: 120px;
+                
+                border-bottom: lightslategrey 2pt solid;
+                margin-left: 10px;
+            }
+            h1{
+                margin: auto;
+                text-align: center;
+            }
+            h2{
+                position: relative;
+                padding:0;
+                margin:0;
+                text-align: center;
+                left: -10px;
+                top: 20px;
+                font-size: 26pt;
+            }
+            input{margin-bottom: 5px;}
+            .site input{margin-top: 40px;}
+            .site textarea{margin-top: 20px;}
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Mini Edytor</h1>
+            <section class="form">
+                <form>
+                    <div>
+                        <p>Wprowadź tytuł</p>
+                        <input type="text" id="input1"><br>
+                        <input type="button" id="submit1" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Utwórz nowy akapit, wprowadź tekst</p>
+                        <textarea name="tekst" cols="40" rows="3" id="input2"></textarea><br>
+                        <input type="button" id="submit2" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Zmień kolor tła (zapis heksadecymalny)</p>
+                        <input type="text" id="input3"><br>
+                        <input type="button" id="submit3" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Zmień krój czcionki w akapicie</p>
+                        <input type="text" id="input4"><br>
+                        <input type="button" id="submit4" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Powtórz pierwszy akapit w tym miejscu</p>
+                        <input type="button" id="submit5" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Data ostatniej modyfikacji strony</p>
+                        <input type="button" id="submit6" value="Wykonaj">
+                    </div>
+                    <div>
+                        <p>Strona kodowa dokumentu</p>
+                        <input type="button" id="submit7" value="Wykonaj">
+                    </div>
+                </form>
+            </section>
+            <section class="site" id="site">
+                <div>
+                  <p></p><h2 id="output1"></h2>
+                </div>
+                <div>
+                    <p></p><textarea name="tekst" cols="40" rows="3" id="output2"></textarea>
+                </div>
+                <div><p></p></div>
+                <div><p></p></div>
+                <div>
+                    <p></p><textarea name="tekst" cols="40" rows="3" id="output5"></textarea>
+                </div>
+                <div>
+                    <p></p><input type="text" id="output6">
+                </div>
+                <div>
+                    <p></p><input type="text" id="output7">
+                </div>
+            </section>
+        </div>
+        <script>
+            document.getElementById('submit1').addEventListener("click",submit1);
+            document.getElementById('submit2').addEventListener("click",submit2);
+            document.getElementById('submit3').addEventListener("click",submit3);
+            document.getElementById('submit4').addEventListener("click",submit4);
+            document.getElementById('submit5').addEventListener("click",submit5);
+            document.getElementById('submit6').addEventListener("click",submit6);
+            document.getElementById('submit7').addEventListener("click",submit7);
+        </script>
+    </body>
+</html>

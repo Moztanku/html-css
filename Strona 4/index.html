@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test wiedzy o języka programia</title>
+
+	</head>
+	<body>
+		<script>
+			document.write('<h2>Test wiedzy o językach programowania</h2>')
+			var questions = 
+			[
+				{q:'Co oznacza skrót OOP?',a:'A. Object Operating Protocol',b:'B. Object Oriented Programming',c:'C. Onion Onion Potatoe',d:'D. World Wide Web',ans:'B'},
+				{q:'Który z tych języków programowania jest najstarszy?',a:'A. COBOL',b:'B. Java',c:'C. C',d:'D. SQL',ans:'A'},
+				{q:'W którym języku nie występuje operator ++?',a:'A. C',b:'B. C++',c:'C. Java',d:'D. Python',ans:'D'},
+				{q:'"write (*,*) \'Hello World!\'", z którego języka pochodzi ta instrukcja?',a:'A. C',b:'B. Fortran',c:'C. Java',d:'D. Javascript',ans:'B'},
+				{q:'Co to jest debugger?',a:'A. Spray na owady',b:'B. System operacyjny',c:'C. Inna nazwa na kompilator',d:'D. Narzędzie do odnajdowania błędów w programie',ans:'D'}
+			]
+			var userInput = "";
+			var userAnserws = ['','','','','']
+			var userScore = 0;
+			for(var i=0; i<questions.length; i++){
+				var question = questions[i].q+'\n'+questions[i].a+'\n'+questions[i].b+'\n'+questions[i].c+'\n'+questions[i].d;
+				do userInput = prompt(question,'')
+				while(!['A','B','C','D'].includes(userInput));
+				if(userInput==questions[i].ans){
+					userScore++;
+					alert('Brawo!');
+				}
+				else{
+					alert('Źle! Dobra odpowiedź: '+questions[i][questions[i].ans.toLowerCase()]);
+				}
+				userAnserws[i]=userInput;
+			}
+			document.write(`<h3>Uzyskałeś ${userScore} na ${questions.length} punktów`);
+			for(var i=0; i<questions.length; i++){
+			document.write(`<h5>Pytanie ${i+1}.</h5>`);
+			document.write(`<p>${questions[i].q}<br>`);
+			document.write(`${questions[i].a}<br>`);
+			document.write(`${questions[i].b}<br>`);
+			document.write(`${questions[i].c}<br>`);
+			document.write(`${questions[i].d}<br>`);
+			document.write(`Twoja odpowiedź: ${userAnserws[i]}<br>`);
+			document.write(`Prawidłowa odpowiedź: ${questions[i].ans}<br>`);
+			}
+		</script>
+		</script>
+	</body>
+</html>

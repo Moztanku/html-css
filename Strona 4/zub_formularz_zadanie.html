@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<title>Formularze - zadanie</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		var temp4;
+			function submitForm(){
+				var temp1 = document.getElementById('countryName').value;
+				var temp2 = document.getElementById('cityName').value;
+				var temp3 = document.getElementById('age').value;
+				
+				document.getElementById("countryName-final").value = temp1;
+				document.getElementById("cityName-final").value = temp2;
+				document.getElementById("sex-final").value = temp4;
+				document.getElementById("age-final").value = temp3;
+			}
+			function tickCheckbox1(){document.getElementById("checkbox_2").checked = false; temp4 = "M";}
+			function tickCheckbox2(){document.getElementById("checkbox_1").checked = false; temp4 = "K";}
+			document.write("<h1>Formularze - zadanie</h1>");
+		</script>
+		<style>
+			form.first{
+				background-color:rgb(231, 212, 255);
+				padding: 5px;
+				padding-bottom: 0px;
+				border: solid rgb(120, 120, 120) 2pt;
+				margin-bottom: 8px;
+				width: 500px;
+				}
+			form.second{
+				background-color: rgb(165, 252, 211);
+				border: solid rgb(120, 120, 120) 2pt;
+				padding: 5px;
+				padding-bottom: 0px;
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<form class="first">
+			<p>Podaj nazwę kraju:  	<input type="text" 		id="countryName"></p>
+			<p>Podaj nazwę miasta:  <input type="text" 		id="cityName"></p>
+			<p>Podaj płeć:  		<input type="checkbox" 	id="checkbox_1" value="M" >M
+									<input type="checkbox" 	id="checkbox_2" value="K">K</p>
+			<p>Podaj wiek:  		<input type="number" 	id="age"></p>
+			<p>						<input type="button"  	id="button" value="Wyślij formularz"><br>
+									<input type="reset" value="Zresetuj"></p>
+		</form>
+		<form class="second">
+			<p>Nazwa kraju: <input type="text" 		id="countryName-final" value=""></p>
+			<p>Nazwa miasta: <input type="text" 	id="cityName-final" value=""></p>
+			<p>Płeć: <input type="text" 			id="sex-final" value=""></p>
+			<p>Wiek w latach: <input type="number" 	id="age-final" value=""></p>
+			<p><input type="reset" value="Zresetuj"></p>
+		</form>
+		<script>
+			document.getElementById('button').addEventListener("click",submitForm);
+			document.getElementById('checkbox_1').addEventListener("click",tickCheckbox1);
+			document.getElementById('checkbox_2').addEventListener("click",tickCheckbox2);
+		</script>
+	</body>
+</html>
